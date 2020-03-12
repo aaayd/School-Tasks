@@ -12,7 +12,7 @@ namespace Euler_Project_2
         {
             int a = 0;
             int b = 1;
-            var numbers = new List<long>{0};
+            var numbers = new List<int>{0};
             while (numbers.Max() < 4000000)
             {
                 int temp = a;
@@ -21,9 +21,9 @@ namespace Euler_Project_2
                 numbers.Add(a);
                 
             }
+            numbers.RemoveAll(x => x > 4000000 || x % 2 != 0);
 
-            numbers.RemoveAll(x => x > 4000000);
-            Console.WriteLine(string.Join("\n", numbers));
+            Console.WriteLine($"Sum: {numbers.Sum()}");
             Console.ReadKey();
         }
     }
