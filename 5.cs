@@ -9,7 +9,6 @@ namespace Euler_Project_5
 {
     class Program
     {
-        //Gets greatest common divisor
         static long gcd(long a, long b)
         {
             while (true)
