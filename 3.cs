@@ -8,39 +8,25 @@ namespace Euler_Project_3
 {
     class Program
     {
-        public static void ConsoleColour(string text, ConsoleColor colour)
-        {
-            ConsoleColor current_colour = Console.ForegroundColor;
-            Console.ForegroundColor = colour;
-            Console.WriteLine(text);
-            Console.ForegroundColor = current_colour;
-        }
         static int LargestPrimeFactor(long target)
         {
             List<int> factors_of_target = new List<int>();
             for (int i = 2; i <= target; i++) {
-
                 if (target % i == 0) {
                     long temp = target / i;
                     factors_of_target.Add(i);
                     
                     target = temp;
                     i--;
-                    //ConsoleColour(target.ToString(),ConsoleColor.Red);
-                    //Console.WriteLine(string.Join("\n", factors_of_target));
                 }
-                //factors_of_target.Add(i);
             }
-            //Console.WriteLine(string.Join("\n", factors_of_target));
             return factors_of_target.Aggregate((a, x) => a * x) == target ? 0 : factors_of_target.Max();
         }
-
-
         static void Main(string[] args)
         {
             const long target = 600851475143;
             Console.WriteLine($"Target: {target}");
-            ConsoleColour($"Largest Prime Factor: {LargestPrimeFactor(target)}", ConsoleColor.Green);
+            Console.WriteLine($"Largest Prime Factor: {LargestPrimeFactor(target)}");
             Console.ReadKey();
         }
     }
