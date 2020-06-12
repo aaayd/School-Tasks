@@ -15,11 +15,7 @@ namespace HighLow
             {
                 guess = int.Parse(Console.ReadLine());
 
-                if (guess > number)
-                    Console.WriteLine($"{guess} is too high!");
-                else if (guess < number)
-                    Console.WriteLine($"{guess} is too low!");
-
+                Console.WriteLine(guess > number ? $"{guess} is too high!" : $"{guess} is too low!");
             }
             Console.WriteLine("You win! Press any key to exit");
             Console.ReadKey();
