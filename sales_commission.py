@@ -7,16 +7,15 @@ class Employee:
         self.id = id
         self.commission = self.sales * 500
 
-    @property
-    def info(self):
+    def __str__(self):
         return (
             f"Employee [{self.id}]: \n" +
             f"    Name - {self.name} \n" + 
             f"    ID - {self.id} \n" +  
             f"    Sales - {self.sales} \n" + 
             f"    Commission - £{self.commission:,.2f} \n"
-        )
-      
+        ) 
+        
 if "__main__" == __name__:
     employee_count = int(input("Input Employee Counter : "))
     employee_arr = []
@@ -41,7 +40,7 @@ if "__main__" == __name__:
     employee_arr[0].commission += bonus
     
     print(f"{employee_arr[0].name} [ID - {employee_arr[0].id}] earned a bonus 15% (£{bonus:.2f}) for having the most sales!\n")
-    print("\n".join([employee.info for employee in employee_arr]))
+    print("\n".join([str(employee) for employee in employee_arr]))
     print("-----------------")
     print(f"Total Properties Sold: - {sum(x.sales for x in employee_arr)}")
     print(f"Total Sales Commission: - £{sum(x.commission for x in employee_arr):,.2f}")
