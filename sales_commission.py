@@ -39,11 +39,9 @@ if "__main__" == __name__:
 
     bonus = employee_arr[0].commission * .15
     employee_arr[0].commission += bonus
+    
     print(f"{employee_arr[0].name} [ID - {employee_arr[0].id}] earned a bonus 15% (£{bonus:.2f}) for having the most sales!\n")
-
-    for index, employee in enumerate(employee_arr):
-        print(employee.info)
-
+    print("\n".join([employee.info for employee in employee_arr]))
     print("-----------------")
     print(f"Total Properties Sold: - {sum(x.sales for x in employee_arr)}")
     print(f"Total Sales Commission: - £{sum(x.commission for x in employee_arr):,.2f}")
