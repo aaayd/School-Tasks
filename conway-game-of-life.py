@@ -40,7 +40,6 @@ def draw_grid(grid, cell_size):
             else:
                 pygame.draw.rect(display, COLOUR_BLACK, (x, y, cell_size, cell_size))
 
-            # Draw Horizontal / Vertical Lines 
             pygame.draw.line(display, COLOUR_GREY, (x, y), (x, height))
             pygame.draw.line(display, COLOUR_GREY, (x, y), (width, y))
 
